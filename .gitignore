@@ -1,0 +1,10 @@
+
+scrapy/tutorial/scrapy.cfg
+scrapy/tutorial/tutorial/__init__.py
+scrapy/tutorial/tutorial/middlewares.py
+scrapy/tutorial/tutorial/items.py
+scrapy/tutorial/tutorial/pipelines.py
+scrapy/tutorial/tutorial/settings.py
+scrapy/tutorial/tutorial/spiders/__init__.py
+scrapy/Untitled.ipynb
+scrapy/.ipynb_checkpoints/Untitled-checkpoint.ipynb
