@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Professor {{ name }} currently has a score of {{ '%0.2f' % score|float }}</h1>
+
+{{ dtable }} <br>
+{{ ctable }} <br>
+
+<p>Reviews:</p>
+{{ rtable }}
+
+
+{% endblock %}
