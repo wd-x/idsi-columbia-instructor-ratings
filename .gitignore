@@ -12,3 +12,4 @@ data/dataframe.csv
 *.csv
 .ipynb_checkpoints/Untitled1-checkpoint.ipynb
 *.csv
+data.zip
