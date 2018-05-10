@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if not name %}
+<h1>This does not exist</h1>
+{% else %}
+<h1>{{ name }} Leaderboard</h1>
+
+{% endif %}
+
+
+
+{% if form %}
+     
+<form action="" method="post">
+        {{ form.hidden_tag() }}
+      <p>
+                {{ form.department_select.label(class_='label') }}<br>
+                {{ form.department_select }}
+            </p> 
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endif %}
+
+
+{{ ptable }}
+
+
+{% endblock %}
