@@ -2,6 +2,7 @@ html { font-family: sans-serif; background: #eee; padding: 1rem; }
 body { max-width: 35rem; margin: 0 auto; background: white; padding: 1rem}
 h1 { font-family: serif; color: #377ba8; margin: 1rem 0; }
 h2 { font-family: sans-serif; margin: 1rem 0; font-size:1.25rem;}
+p { font: bold;}
 
 a { color: #377ba8; }
 hr { border: none; border-top: 1px solid lightgray; }
@@ -27,5 +28,7 @@ form label {margin-left: 0rem;}
 form input { margin-left: 0rem;}
 table {    border-collapse: collapse;
     text-align: left;
-    padding: 1rem;      
+    padding: 2rem;      
 }
+
+ltable{ padding:2rem;}

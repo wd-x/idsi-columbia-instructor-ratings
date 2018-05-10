@@ -27,10 +27,14 @@ class ReviewTable(Table):
 
 class CourseTable(Table):
     cid = Col('cid', show=False)
-    cname = LinkCol('Course', 'redirect_culpa', text_fallback=False,
-                    url_kwargs=dict(id='cid'), attr_list='cname')
+    cname = Col('Course')
+    #cname = LinkCol('Course', 'redirect_search', text_fallback=False,
+    #                url_kwargs=dict(cnamesearch='cname'), attr_list='cname',
+    #                url_kwargs_extra=dict( pnamesearch='', did=-1,) )
 
 class DepartmentTable(Table):
     did = Col('did', show=False)
     dname = Col('Department')
+    #dname = LinkCol('Department', 'redirect_search', url_kwargs=dict(did='did'),
+    #                text_fallback=False, attr_list='dname', url_kwargs_extra=dict(pnamesearch='', cnamesearch=''))
 

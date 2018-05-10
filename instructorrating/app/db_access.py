@@ -1,5 +1,6 @@
 from app import db
 from app.models import Professor, Department, Review, Course
+from gensim.summarization.summarizer import summarize
 import pandas as pd
 import ast
 from tqdm import tqdm
@@ -98,6 +99,22 @@ def import_professors(df):
                     p.courses.append(c)
         db.session.add(p)
         db.session.commit()
+
+
+def update_text(df):
+    for i in tqdm(list(df.review_id)):
+        newtext = Review.query.filter(Review.rid==i).first().text
+        if len(newtext.split('. ')) > 2 and i>11362:
+            try:
+                inputtext = summarize(newtext, word_count=15)
+            except ValueError:
+                inputtext = newtext
+        else:
+            inputtext = newtext
+        Review.query.filter(Review.rid==i).update({Review.text: inputtext})
+        db.session.commit()
+
+
         
 '''
         pquery = Professor.query.filter(Professor.pid==int(series.professor_id)).first()
