@@ -1,0 +1,36 @@
+<html>
+    <head>
+    <!-- In routes render_template, title defines tab title, 
+        base.html if title forgotten, then replace with default title as below;
+        % % blocks are conditional blocks, doublecurly blocks are dynamic, takes in variables input from render_template -->
+      {% if title %}
+      <title>{{ title }} - Instructor Rating</title>
+      {% else %}
+      <title>Welcome to the Instructor rating site</title>
+      {% endif %}
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    </head>
+
+    <body>
+
+        <div>Instructor Rating: 
+            <a href="{{ url_for('index') }}">Home</a> |
+            <a href="{{ url_for('leaderboard') }}">Leaderboard</a> |
+            <a href="{{ url_for('leaderboard_department') }}">Leaderboard by Department</a> | 
+        </div>
+
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}
+        {% endblock %}
+        </hr>
+    </body>
+</html>

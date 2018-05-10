@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Welcome to the instructor rating site! </h1>
+
+<h2>
+    Browse the leaderboards above, or see how your professor scores, along with a summary of reviews written about them.
+</h2>
+
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.professor_name.label(class_='label') }}<br>
+        {{ form.professor_name(class_='input', size=32) }}
+        {% for error in form.professor_name.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>
+            {{ form.department_select.label(class_='label') }}<br>
+            {{ form.department_select }}
+        </p>
+    <p>
+        {{ form.course_name.label(class_='label') }}<br>
+        {{ form.course_name(class_='input', size=32) }}
+        {% for error in form.course_name.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}
+
